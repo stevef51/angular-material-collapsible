@@ -1,34 +1,59 @@
 {
-  "name": "angular-material-collapsible",
-  "version": "1.0.0",
-  "description": "",
-  "main": "js/collapsible.js",
+  "_from": "git+https://github.com/fagnersilvamartins/angular-material-collapsible.git",
+  "_id": "angular-material-collapsible@1.0.0",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/angular-material-collapsible",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/fagnersilvamartins/angular-material-collapsible",
+    "rawSpec": "https://github.com/fagnersilvamartins/angular-material-collapsible",
+    "saveSpec": "git+https://github.com/fagnersilvamartins/angular-material-collapsible.git",
+    "fetchSpec": "https://github.com/fagnersilvamartins/angular-material-collapsible.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/fagnersilvamartins/angular-material-collapsible.git#2b9c3fda4c97b4cdaa0d72f615b2b33ee344968b",
+  "_spec": "https://github.com/fagnersilvamartins/angular-material-collapsible",
+  "_where": "/src/VirtualMgr.SPA",
+  "author": {
+    "name": "Fagner Silva Martins"
+  },
+  "bugs": {
+    "url": "https://github.com/fagnersilvamartins/angular-material-collapsible/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Angular Material Collapsible is a collapsible component for angular material. Collapsibles are accordion elements that expand when clicked on. They allow you to hide content that is not immediately relevant to the user.",
   "devDependencies": {
+    "browser-sync": "^2.18.2",
     "gulp": "^3.9.1",
     "gulp-cli": "^1.2.2",
-    "browser-sync": "^2.18.2",
     "gulp-cssmin": "^0.1.7",
     "gulp-inject": "^4.1.0",
     "gulp-minify": "0.0.14",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fagnersilvamartins/angular-material-collapsible.git"
-  },
+  "homepage": "https://github.com/fagnersilvamartins/angular-material-collapsible#readme",
   "keywords": [
     "angular1",
     "collapsible",
     "angular-material"
   ],
-  "author": "Fagner Silva Martins",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/fagnersilvamartins/angular-material-collapsible/issues"
+  "main": "index.js",
+  "name": "angular-material-collapsible",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fagnersilvamartins/angular-material-collapsible.git"
   },
-  "homepage": "https://github.com/fagnersilvamartins/angular-material-collapsible#readme"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
 }
