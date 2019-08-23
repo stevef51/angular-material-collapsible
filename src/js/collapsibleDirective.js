@@ -8,6 +8,8 @@
         .directive('mdCollapsibleHeader', MdCollapsibleHeader)
         .directive('mdCollapsibleBody', MdCollapsibleBody);
 
+    MdCollapsibleItem.$inject = ['$document'];
+
     const CLASS_ACTIVE = 'active';
 
     function removeClassActive(collapsible) {
@@ -29,7 +31,7 @@
         };
     }
 
-    function MdCollapsibleItem() {
+    function MdCollapsibleItem($document) {
         return {
             restrict: 'E',
             scope: {
@@ -41,10 +43,10 @@
                     element.addClass(CLASS_ACTIVE);
                 }
                 if (scope.closeOnClick) {
-                    document.body.addEventListener('click', close);
+                    $document[0].body.addEventListener('click', close);
 
-                    scope.$on('$destroy', () => {
-                        document.body.removeEventListener('click', close);
+                    scope.$on('$destroy', function () {
+                        $document[0].body.removeEventListener('click', close);
                     });
                 }
 
