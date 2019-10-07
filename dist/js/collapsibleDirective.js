@@ -36,22 +36,47 @@
             restrict: 'E',
             scope: {
                 isOpen: '=?mdOpen',
-                closeOnClick: '='
+                closeOnClick: '@'
             },
             link: function (scope, element) {
                 if (scope.isOpen) {
                     element.addClass(CLASS_ACTIVE);
                 }
                 if (scope.closeOnClick) {
-                    $document[0].body.addEventListener('click', close);
+                    var events = ['click', 'touchend'];
+                    events.forEach(function (ev) {
+                        $document[0].body.addEventListener(ev, close);
+                    });
 
                     scope.$on('$destroy', function () {
-                        $document[0].body.removeEventListener('click', close);
+                        events.forEach(function (ev) {
+                            $document[0].body.removeEventListener(ev, close);
+                        });
                     });
                 }
 
                 function close(ev) {
-                    if (!element[0].children[0].contains(ev.target) && element.hasClass(CLASS_ACTIVE)) {
+                    if (!element.hasClass(CLASS_ACTIVE)) {
+                        return;
+                    }
+
+                    const clickInHeader = element[0].children[0].contains(ev.target);
+                    const clickInBody = element[0].children[1].contains(ev.target);
+
+                    var close = false;
+                    switch (scope.closeOnClick) {
+                        case 'outside':
+                            close = !clickInHeader && !clickInBody;
+                            break;
+                        case 'true':
+                            if (ev.type === 'click') {
+                                close = !clickInHeader;
+                            } else {
+                                close = !clickInHeader && !clickInBody;
+                            }
+                            break;
+                    }
+                    if (close) {
                         element.removeClass(CLASS_ACTIVE);
                     }
                 }

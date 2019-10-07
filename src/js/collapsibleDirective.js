@@ -43,12 +43,12 @@
                     element.addClass(CLASS_ACTIVE);
                 }
                 if (scope.closeOnClick) {
-                    let events = ['click', 'touchend'];
+                    var events = ['click', 'touchend'];
                     events.forEach(function (ev) {
                         $document[0].body.addEventListener(ev, close);
-                    })
+                    });
 
-                    scope.$on('$destroy', () => {
+                    scope.$on('$destroy', function () {
                         events.forEach(function (ev) {
                             $document[0].body.removeEventListener(ev, close);
                         });
@@ -63,7 +63,7 @@
                     const clickInHeader = element[0].children[0].contains(ev.target);
                     const clickInBody = element[0].children[1].contains(ev.target);
 
-                    let close = false;
+                    var close = false;
                     switch (scope.closeOnClick) {
                         case 'outside':
                             close = !clickInHeader && !clickInBody;
