@@ -116,6 +116,10 @@
                             removeClassActive(collapsible);
                         }
                         parentElement.addClass(CLASS_ACTIVE);
+
+                        if (parentElement.hasClass('scroll-into-view')) {
+                            element[0].scrollIntoView(true);
+                        }
                     }
                 }
 
